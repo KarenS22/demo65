@@ -1,0 +1,69 @@
+<div>
+  <h1>Hola, {{ name }}</h1>
+</div>
+     <h2>{{title}}</h2>
+      <p>Congratulations! Se compilo la app. 🎉</p> <br>
+      <p> 
+        Edad = {{edad}} {{esMayorDeEdad()}} <br>
+        Salario = {{salario}} <br> 
+        Salario anual = {{salario*12}}
+      </p>
+      <hr>
+      <p (click) ="incrementar()">
+         Edad = {{edad}} <span *ngIf="edad < 18"> Es menor de edad </span> 
+      </p> <br>
+      <ul>
+        <li *ngFor="let sueldo of sueldos"> {{sueldo *contador}}</li>
+      </ul>
+<hr>
+      <p>
+        {{contador}}
+        <button (click) ="incrementar()">Incrementar</button>
+      </p>
+      <hr>
+      <form>
+        <!-- Corchetes hacen un get -->
+         <!-- Parentesis hacen set  [(ngModel)]--> 
+        <input type="text" name="txtName" [ngModel]="name"/> <br>
+        A= <input type="number" name="txtA" [(ngModel)]="a"/> <br>
+        B= <input type="number" name="txtB" [(ngModel)]="b"/> <br>
+        C= <input type="number" name="txtC" [(ngModel)]="c"/> <br>
+        <button (click)="sumar()">Sumar</button>
+      </form>
+<hr>
+      
+      <hr>
+      <p>Programación y plataformas WEB</p>
+      <p>Ingeniería en las Ciencias de la Computación</p> <br>
+      <a class="enlace" target="_blank" href="https://www.ups.edu.ec/en/home">Universidad Politécnica Salesiana </a>
+<hr>
+<app-dado #dado1 ></app-dado>
+<app-dado #dado2 ></app-dado>
+<app-dado #dado3 ></app-dado>
+<hr>
+<!-- <button (click)="dado1.lanzar(); dado2.lanzar(); dado3.lanzar()">Lanzar todo</button> -->
+<button (click)="lanzar()">Lanzar todo</button>
+<hr>
+      {{minuto}} min. 
+      <app-cronometro (minuto)="actualizar($event)"></app-cronometro>
+<hr>
+      <app-articulos></app-articulos>
+
+<hr>
+<table border="1">
+  <tr>
+    <th>Nombre</th>
+    <th>Raza</th>
+    <th>Foto</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor = "let perro of perros">
+    <td>{{perro.nombre}}</td>
+    <td>{{perro.raza}}</td>
+    <img src="{{perro.foto}}" alt="">
+    <td>
+      <button>Borrar</button>
+      <button>Seleccionar</button>
+  </tr>
+
+</table>

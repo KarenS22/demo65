@@ -1,0 +1,24 @@
+<h3>Tabla de Articulos</h3>
+<table class="tablaArticulos" border="1rem">
+  <tr>
+    <th>Codigo</th>
+    <th>Descripcion</th>
+    <th>Precio</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let articulo of articulos">
+    <td>{{ articulo.codigo }}</td>
+    <td>{{ articulo.descripcion }}</td>
+    <td>{{ articulo.precio }}</td>
+    <td>
+      <button (click)="borrar(articulo.codigo)">Borrar</button>
+      <button (click)="seleccionar(articulo.codigo, articulo.descripcion, articulo.precio)">
+        Seleccionar
+      </button>
+    </td>
+  </tr>
+</table>
+Codigo= <input type="number" name="txtCodigo" [(ngModel)]="codigo" /> <br />
+Descripcion= <input type="text" name="txtDescripcion" [(ngModel)]="descripcion" /> <br />
+Precio= <input type="number" name="txtPrecio" [(ngModel)]="precio" /> <br />
+<button (click)="guardar()">Guardar</button>

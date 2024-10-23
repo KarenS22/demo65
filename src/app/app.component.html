@@ -46,7 +46,7 @@
 
   h1 {
     font-size: 3.125rem;
-    color: var(--gray-900);
+    color: cornflowerblue;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.125rem;
@@ -54,11 +54,33 @@
     font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
+      text-align: center;
   }
 
+  h1:hover{
+    font-size: 4rem;
+    color: blueviolet;
+    transition-duration: 500ms;
+  }
+
+.tablaArticulos{
+  border: blueviolet;
+  margin-bottom: 3px;
+}
+
+.tablaArticulos tr td{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
   p {
     margin: 0;
     color: var(--gray-700);
+    
   }
 
   main {
@@ -124,7 +146,13 @@
     line-height: 1.4rem;
     letter-spacing: -0.00875rem;
     text-decoration: none;
+    width: 85px;
   }
+
+table img{
+  width: 250px;
+}
+
 
   .pill:hover {
     background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
@@ -162,6 +190,21 @@
     fill: var(--gray-900);
   }
 
+  .enlace {
+    display: flex;
+    color: blue;
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+  }
+
+  .enlace:hover {
+    background-color: var(--inter-font);
+    color: var(--gray-900);
+    border: black solid 1px;
+  }
+
   @media screen and (max-width: 650px) {
     .content {
       flex-direction: column;
@@ -176,6 +219,10 @@
     }
   }
 </style>
+
+<head>
+  <script src="https://kit.fontawesome.com/4c58adf8ae.js" crossorigin="anonymous"></script>
+</head>
 
 <main class="main">
   <div class="content">
@@ -225,43 +272,74 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+
+      <router-outlet></router-outlet>
+
+
     </div>
+    
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
-        }
+        <a
+        class="pill"
+        routerLink=""
+        rel="noopener"
+      >
+        <span>Inicio </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="14"
+          viewBox="0 -960 960 960"
+          width="14"
+          fill="currentColor"
+        >
+          <path
+            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+          />
+        </svg>
+      </a>
+        <a
+        class="pill"
+        routerLink="pages/acerca-de"
+        rel="noopener"
+      >
+        <span>Acerca de </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="14"
+          viewBox="0 -960 960 960"
+          width="14"
+          fill="currentColor"
+        >
+          <path
+            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+          />
+        </svg>
+      </a>
+      <a
+        class="pill"
+        routerLink="pages/mision"
+        rel="noopener"
+      >
+        <span>Mision </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="14"
+          viewBox="0 -960 960 960"
+          width="14"
+          fill="currentColor"
+        >
+          <path
+            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+          />
+        </svg>
+      </a>
       </div>
       <div class="social-links">
+        
         <a
-          href="https://github.com/angular/angular"
+        routerLink="/pages/acercade"
           aria-label="Github"
           target="_blank"
           rel="noopener"
@@ -333,4 +411,4 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />
+
